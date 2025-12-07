@@ -48,7 +48,7 @@ The API service is deployed and running live on **Render**.
 
 The Streamlit application consumes the live API to provide a user interface.
 
-* **Live Streamlit App:** *(Placeholder: Insert your Streamlit Cloud URL here after deployment)*
+* **Live Streamlit App:** (https://immo-eliza-deployment-cvn8wgrvb3nlp6gz8ub6xk.streamlit.app/)
 
 ## 💻 How to Run the App Locally
 
@@ -75,6 +75,7 @@ If a developer wants to inspect or run the application locally, they only need t
     ```
 3.  The app will open automatically in your browser. It is configured to send prediction requests directly to the live Render API.
 
+4. Note on Health Check: The root path ( /) only accepts GETrequests for a basic health check. If you receive a 405 Method Not Allowed status when making a GETrequest, this still confirms the server is alive and running on Render.
 ---
 
 ## 💡 API Usage for Developers
