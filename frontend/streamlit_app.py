@@ -9,7 +9,7 @@ from typing import Dict, Any
 def load_postal_codes():
     """Load unique postal codes and city information from CSV"""
     try:
-        df = pd.read_csv("../Backend/data/immovlan_cleaned_file_final.csv")
+        df = pd.read_csv("Backend/data/immovlan_cleaned_file_final.csv")
         
         # Postal code and city combination
         postal_city = df[['postal_code', 'city']].drop_duplicates().dropna()
@@ -48,7 +48,7 @@ st.title("🏡 Immo Eliza Real Estate Price Prediction")
 st.markdown("Calculate the estimated property price based on Belgian real estate data.")
 
 # API URL
-API_BASE_URL = "https://immo-eliza-deployment-m3wu.onrender.com"
+API_BASE_URL = "https://immo-eliza-deployment-vgfy.onrender.com/predict"
 API_PREDICT_URL = f"{API_BASE_URL}/predict"
 
 # Backend health check
@@ -200,7 +200,7 @@ if st.button("🔮 Predict", type="primary", use_container_width=True):
                     API_PREDICT_URL, 
                     json=data,
                     headers={"Content-Type": "application/json"},
-                    timeout=10
+                    timeout=20
                 )
 
                 if response.status_code == 200:
