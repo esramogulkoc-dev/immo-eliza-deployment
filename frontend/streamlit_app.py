@@ -52,14 +52,30 @@ API_BASE_URL = "https://immo-eliza-deployment-vgfy.onrender.com/predict"
 API_PREDICT_URL = f"{API_BASE_URL}/predict"
 
 # Backend health check
+    
 def check_backend_health():
     try:
-        response = requests.get(API_BASE_URL, timeout=2)
+        # DÜZELTME 1: Timeout süresi 2'den 10 saniyeye çıkarıldı (Render için kritik)
+        response = requests.get(API_BASE_URL, timeout=10) 
+        
+        # Eğer 200 dönerse (OK) başarılı
         if response.status_code == 200:
-            return True, "✅ Backend is active"
+            return True, "✅ Backend is active (Status 200)"
+        
+        # DÜZELTME 2: Eğer 405 dönerse de başarılı kabul et (API'nin çalıştığını gösterir)
+        if response.status_code == 405: 
+            return True, "⚠️ Backend is active, but health check method is not allowed (Status 405)"
+            
+        # Diğer hatalar
         return False, f"⚠️ Backend is not responding (Status: {response.status_code})"
+        
+    except requests.exceptions.Timeout:
+        # Timeout hatası yakalanırsa, daha açıklayıcı bir mesaj verilir.
+        return False, "⏱️ Health check timed out (Timeout = 10s). Backend may be spinning up."
+        
     except requests.exceptions.ConnectionError:
         return False, "❌ Cannot connect to backend!"
+        
     except Exception as e:
         return False, f"❌ Error: {str(e)}"
 
