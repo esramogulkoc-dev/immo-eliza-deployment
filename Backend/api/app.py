@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import traceback
 import sys
 import os
-from predict import MODEL_FILE, COL_FILE
+from .predict import MODEL_FILE, COL_FILE
 
 
 # --- Load Model and Functions ---
