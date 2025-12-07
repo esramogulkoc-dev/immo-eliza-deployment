@@ -1,0 +1,7 @@
+Livable_surface,Number_of_bedrooms,Total_land_surface,postal_code,has_terrace,has_garage,region,type_of_heating,epc_rating,type_of_property,Price
+100,3,500,1000,1,0,flanders,gas,c,house,325845
+120,4,600,1050,1,1,brussels,electricity,b,apartment,371584
+150,3,800,2000,0,1,antwerp,gas,a,villa,400016
+90,2,400,3000,0,0,leuven,oil,d,house,229336
+200,5,1000,9000,1,1,gent,gas,a,villa,768902
+
