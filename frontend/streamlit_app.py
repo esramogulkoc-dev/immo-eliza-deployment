@@ -48,7 +48,7 @@ st.title("🏡 Immo Eliza Real Estate Price Prediction")
 st.markdown("Calculate the estimated property price based on Belgian real estate data.")
 
 # API URL
-API_BASE_URL = "http://127.0.0.1:8000"
+API_BASE_URL = "https://immo-eliza-deployment-m3wu.onrender.com"
 API_PREDICT_URL = f"{API_BASE_URL}/predict"
 
 # Backend health check
