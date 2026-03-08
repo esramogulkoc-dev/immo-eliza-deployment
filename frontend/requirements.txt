@@ -9,5 +9,6 @@ uvicorn
 fastapi
 streamlit
 pydantic
-requests
+altair==4.2.2
+
 
