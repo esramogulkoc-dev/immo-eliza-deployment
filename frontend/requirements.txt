@@ -7,7 +7,7 @@ joblib==1.3.2
 gunicorn
 uvicorn
 fastapi
-streamlit
+streamlit>=1.32
 pydantic
 altair==4.2.2
 
