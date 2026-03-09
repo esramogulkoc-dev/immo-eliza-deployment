@@ -72,6 +72,8 @@ The Streamlit application consumes the live API to provide a user interface.
 
 - **Live Streamlit App:** [https://immo-eliza-deployment-cvn8wgrvb3nlp6gz8ub6xk.streamlit.app/](https://immo-eliza-deployment-cvn8wgrvb3nlp6gz8ub6xk.streamlit.app/)
 
+![alt text](app.png)
+
 ---
 
 ## 💻 How to Run the App Locally
